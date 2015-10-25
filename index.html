@@ -10,7 +10,7 @@
 
 	<body>
 		<header class="menu">
-			<div class="menu__id">Фамилия Имя Отчетство, 35 лет</div>
+			<div class="menu__id"><span data-bind="text: alias">Фамилия Имя Отчетство</span>, <span data-bind="text: age"></span></div>
 			<ul class="menu__ul">
 				<li class="menu__item">Пункт 1</li>
 				<li class="menu__item">Пункт 2</li>
@@ -46,7 +46,7 @@
 									<img class="main__icon" src="img/place.png">
 								</div>
 								<div class="main__text-container">
-									Живет в   <span class="span--blue">Россия, Москва</span>
+									Живет в   <span class="span--blue" data-bind="text: cities()[0]"></span>
 								</div>
 							</div>
 							<div class="main__row">
@@ -54,7 +54,7 @@
 									<img class="main__icon main__icon--heart" src="img/heart.png">
 								</div>
 								<div class="main__text-container">
-									Состоит <span class="span--blue">в браке</span>
+									<span data-bind="if: marriageStatus">Состоит <span class="span--blue">в браке</span></span>
 								</div>
 							</div>
 						</div>
@@ -64,13 +64,20 @@
 									<img class="main__icon" src="img/study.png">
 								</div>
 								<div class="main__text-container">
-									Учился в   <span class="span--blue">МАРГТУ</span>
+									Учился в  
+									<span data-bind="foreach: universities">
+										<span class="span--blue" data-bind="text: name"></span>
+									</span>
 								</div>
 							</div>
 							<div class="main__row">
 								<div class="main__icon-container"></div>
 								<div class="main__text-container">
-									<span class="span--smaller">Ранее   <span class="span--blue">Школа 1799, Лицей 2301</span></span>
+									<span class="span--smaller">Ранее
+										<span data-bind="foreach: schools">
+											<span class="span--blue" data-bind="text: name"></span>, 
+										</span>
+									</span>
 								</div>
 							</div>
 						</div>
@@ -79,10 +86,9 @@
 								<div class="main__icon-container">
 									<img class="main__icon" src="img/job.png">
 								</div>
-								<div class="main__text-container">
-									<span class="span--blue">Менеджер по LED освещению, ООО Ромашка.</span> 2014 - н.в.
+								<div class="main__text-container" data-bind="foreach: jobs">
+									<span class="span--blue"><span data-bind="text: position"></span>, <span data-bind="text: name"></span></span> <span data-bind="text: startDate"></span>
 									<br>
-									<span class="span--smaller">Ранее <span class="span--blue">ООО Семицветик</span> в августе 2014 г.</span>
 								</div>
 							</div>
 							<div class="main__row">
@@ -90,7 +96,7 @@
 									<img class="main__icon" src="img/salary.png">
 								</div>
 								<div class="main__text-container">
-									Желаемый доход 2013 г. <span class="span--blue">70 000 рублей</span>
+									Желаемый доход <span class="span--blue" data-bind="text: salary"></span>
 								</div>
 							</div>
 						</div>
@@ -100,7 +106,7 @@
 									<img class="main__icon" src="img/device.png">
 								</div>
 								<div class="main__text-container">
-									Мобильные устройства <span class="span--blue">iPhone</span>
+									Мобильные устройства <span class="span--blue" data-bind="text: devices"></span>
 								</div>
 							</div>
 							<div class="main__row">
@@ -108,7 +114,7 @@
 									<img class="main__icon" src="img/time.png">
 								</div>
 								<div class="main__text-container">
-									Резюме обновлено <span class="span--blue">2 недели назад</span>
+									Резюме обновлено <span class="span--blue" data-bind="text: lastActivityTime"></span>
 								</div>
 							</div>
 						</div>
@@ -146,7 +152,7 @@
 									<img class="main__icon" src="img/vk.png">
 								</div>
 								<div class="main__text-container">
-									<a href=""><span class="span--blue">Фамилия Имя Отчество</span></a>
+									<a href=""><span class="span--blue" data-bind="text: alias"></span></a>
 								</div>
 							</div>
 						</div>
@@ -156,7 +162,9 @@
 		</div> <!-- container -->
 	
 		<script type="text/javascript" src="js/lib/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="js/lib/less.min.js"></script>
 		<script type="text/javascript" src="js/app/script.js"></script>
+		<script type="text/javascript" src="js/app/data.js"></script>
 	</body>
 </html>

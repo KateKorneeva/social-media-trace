@@ -171,6 +171,7 @@ header.menu {
 
 .main__text-container {
 	display: inline-block;
+	max-width: 430px;
 }
 
 .main__icon {

@@ -1,91 +1,101 @@
-var myViewModel = {
-  "avatarURL": "/avatar/628bffae-69d7-4b7a-ad83-b5eb8fbee492",
-  "alias": "Фамилия Имя Отчество",
-  "birthDate": 326419200,
-  "pages": [
-    {
-      "network": "odnoklassniki",
-      "id": "555555555555",
-      "alias": "Фамилия Имя Отчество",
-      "lastActivityTime": 1442880000,
-      "cities": ["Россия, Москва"],
-      "jobs": [],
-      "phones": [],
-      "emails": [],
-      "devices": [],
-      "salary": null,
-      "marriageStatus": null
-    },
-    {
-      "network": "vkontakte",
-      "id": "55555555",
-      "alias": "Фамилия Имя Отчество",
-      "lastActivityTime": 1442880000,
-      "cities": ["Россия, Москва"],
-      "jobs": [],
-      "phones": [],
-      "emails": [],
-      "devices": ["iPhone"],
-      "salary": null,
-      "marriageStatus": "married"
-    },
-    {
-      "network": "odnoklassniki",
-      "id": "100005555555555",
-      "alias": "Фамилия Имя Отчество",
-      "lastActivityTime": 1442880000,
-      "cities": [],
-      "jobs": [
-        {
-          "name": "ООО Ромашка",
-          "city": "Москва",
-          "country": "Россия",
-          "startDate": 1406851200,
-          "position": "Менеджер по LED освещению"
-        }
-      ],
-      "phones": [
-        "+7 900 000-00-08",
-        "+7 900 000-00-48"
-      ],
-      "emails": ["none@rambler.ru"],
-      "devices": [],
-      "salary": null,
-      "marriageStatus": null
-    },
-    {
-      "network": "vkontakte",
-      "id": "555555555555",
-      "alias": "Фамилия Имя Отчество",
-      "lastActivityTime": null,
-      "cities": [],
-      "jobs": [],
-      "phones": ["+7 900 000-00-48"],
-      "emails": ["none@rambler.ru"],
-      "devices": [],
-      "salary": "70 000 рублей",
-      "marriageStatus": null
-    }
-  ],
-  "universities": [
-    {
-      "name": "СИМТ, Саранский государственный институт информационных технологий",
-      "city": "Москва",
-      "country": "Россия"
-    }
-  ],
-  "schools": [
-    {
-      "name": "Школа 1799",
-      "city": "Москва",
-      "country": "Россия"
-    },
-    {
-      "name": "Лицей 2301",
-      "city": "Москва",
-      "country": "Россия"
-    }
-  ]
+var viewModel = function () {
+	var self = this;
+
+	self.avatarURL = ko.observable();
+	self.alias = ko.observable();
+	self.birthDate = ko.observable();
+	self.universities = ko.observableArray();
+	self.schools = ko.observableArray();
+
+	self.pages = ko.observableArray();
+
+	self.age = ko.computed(function() {
+		var date = parseInt(new Date(self.birthDate()).getFullYear());
+		var now = parseInt(new Date().getFullYear());
+		var age = (now - date);
+		return age;
+	}, viewModel);
+
+	self.cities = ko.computed(function() {
+		var cities = ko.utils.arrayMap(self.pages(), function(pagesElem) {
+			return pagesElem.cities;
+		});
+		return ko.utils.arrayGetDistinctValues(cities);
+	}, viewModel);
+
+	self.marriageStatus = ko.computed(function() {
+		var marriageStatus = ko.utils.arrayMap(self.pages(), function(pagesElem) {
+			return pagesElem.marriageStatus;
+		});
+		
+		var married = false;
+		for (var i = 0; i < marriageStatus.length; i++) {
+			if (marriageStatus[i] == "married") {
+				married = true;
+			};
+		};
+		return married;
+	}, viewModel);
+
+	self.jobs = ko.computed(function() {
+		var jobs = [];
+		for (var i = 0; i < self.pages().length; i++) {
+			if (self.pages()[i].jobs.length > 0) {
+				for (var j = 0; j < self.pages()[i].jobs.length; j++) {
+					jobs.push(self.pages()[i].jobs[j]);
+				};
+			}
+		};
+		return jobs;
+	}, viewModel);
+
+	self.currentJob = ko.observable(self.jobs[0]);
+
+	self.salary = ko.computed(function() {
+		var salary = [];
+		for (var i = 0; i < self.pages().length; i++) {
+			if (self.pages()[i].salary != null) {
+				salary.push(self.pages()[i].salary);
+			}
+		};
+		return salary;
+	}, viewModel);
+
+
+	self.devices = ko.computed(function() {
+		var devices = [];
+		for (var i = 0; i < self.pages().length; i++) {
+			if (self.pages()[i].devices.length > 0) {
+				devices.push(self.pages()[i].devices);
+			}
+		};
+		return devices;
+	}, viewModel);
+
+	self.lastActivityTime = ko.computed(function() {
+		var lastActivityTime = [];
+		for (var i = 0; i < self.pages().length; i++) {
+			if (self.pages()[i].lastActivityTime != null) {
+				lastActivityTime.push(self.pages()[i].lastActivityTime);
+			}
+		};
+		return new Date(Math.max.apply(Math, lastActivityTime));
+	}, viewModel);
+
+	self.phones = ko.observableArray();
+	self.emails = ko.observableArray();
+	self.network = ko.observableArray();
+
 };
 
-ko.applyBindings(myViewModel);
+$(function () {
+	var viewModelObject = new viewModel();
+	viewModelObject.avatarURL(data.avatarURL)
+					.alias(data.alias)
+					.birthDate(new Date(data.birthDate))
+					.universities(data.universities)
+					.schools(data.schools)
+					.pages(data.pages);
+	console.log(viewModelObject.jobs());
+	ko.applyBindings(viewModelObject);
+});
