@@ -3,14 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Profile</title>
-		<!-- <link rel="stylesheet/less" href="stylesheets/main.less" type="text/css" /> -->
 		<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 
 	</head>
 
 	<body>
 		<header class="menu">
-			<div class="menu__id"><span data-bind="text: alias">Фамилия Имя Отчетство</span>, <span data-bind="text: age"></span></div>
+			<div class="menu__id"><span data-bind="text: alias"></span>, <span data-bind="text: age"></span></div>
 			<ul class="menu__ul">
 				<li class="menu__item">Пункт 1</li>
 				<li class="menu__item">Пункт 2</li>
@@ -29,11 +28,11 @@
 				<div class="main__header">
 					<img class="main__icon" src="img/info.png">
 					Общая информация  
-					<a href=""><span class="span--annot">рекомендации верификатору</span></a>
+					<span class="span--annot a jsOpenRecommend">рекомендации верификатору</span></a>
 				</div> <!-- main__header -->
 				<div class="main__container">
-					<div class="main__recommend">
-						<div class="main__close"><a class="span--smaller a--black" href="">закрыть</a></div>
+					<div class="main__recommend hidden jsRecommend">
+						<div class="main__close"><span class="span--smaller a a--black jsCloseRecommend">закрыть</span></div>
 						<p class="main__h4 red">Отрицательные маркеры</p>
 						<p class="main__p">Информация о семейном статусе и наличии иждивенцев не совпадает с информацией указанной в анкете клиента. В этом случае нужно уточнить эту информацию при разговоре.</p>
 						<p class="main__h4 green">Положительные маркеры</p>
@@ -126,15 +125,17 @@
 									<img class="main__icon main__icon--phone" src="img/phone.png">
 								</div>
 								<div class="main__text-container">
-									<span class="span--blue span--line-height">+7 900 000-00-08 <br> +7 900 000-00-48</span>
+									<span class="span--blue span--line-height" data-bind="foreach: phones">
+										<span data-bind="text: $data"></span><br>
+									</span>
 								</div>
 							</div>
 							<div class="main__row">
 								<div class="main__icon-container main__icon-container--contacts">
 									<img class="main__icon" src="img/mail.png">
 								</div>
-								<div class="main__text-container">
-									<span class="span--blue">none@rambler.ru</span>
+								<div class="main__text-container" data-bind="foreach: emails">
+									<span class="span--blue" data-bind="text: $data"></span><br>
 								</div>
 							</div>
 						</div>
@@ -164,6 +165,7 @@
 		<script type="text/javascript" src="js/lib/knockout-3.3.0.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="js/lib/less.min.js"></script>
+		<script type="text/javascript" src="js/app/app.js"></script>
 		<script type="text/javascript" src="js/app/script.js"></script>
 		<script type="text/javascript" src="js/app/data.js"></script>
 	</body>

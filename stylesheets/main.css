@@ -34,6 +34,11 @@ html {
 	color: green;
 }
 
+.a {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .a--black {
 	color: #333;
 }
