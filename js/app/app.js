@@ -116,6 +116,5 @@ $(function () {
 					.universities(data.universities)
 					.schools(data.schools)
 					.pages(data.pages);
-	console.log(viewModelObject.phones());
 	ko.applyBindings(viewModelObject);
 });
