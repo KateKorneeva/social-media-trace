@@ -43,6 +43,11 @@ html {
 	color: #333;
 }
 
+.normal-font {
+	font-weight: normal;
+	color: #999;
+}
+
 body {
 	max-width: 1092px;
 	margin: 0 auto;
@@ -198,4 +203,95 @@ header.menu {
 	display: inline-block;
 	vertical-align: top;
 	width: 29%;
+}
+
+
+/* Friends page specific styles*/
+
+.filters {
+	padding: 0;
+	margin: 10px 0;
+}
+
+.filter-item {
+	display: inline-block;
+	list-style: none;
+	font-weight: bold;
+	font-size: 0.6em;
+	margin: 0 5px;
+	color: #3C5A96;
+	cursor: pointer;
+}
+
+.search {
+	margin-top: 10px;
+}
+
+.search__input {
+	height: 20px;
+	width: 350px;
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+.search__input[value] {
+	color: #C9C9C9;
+}
+
+.search__button {
+	margin-left: 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+	color: #666;
+	font-size: 1.2em;
+}
+
+.table {
+	margin-top: 10px;
+}
+
+.table__col {
+	border: 1px solid #ddd;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	margin-right: -5px;
+	margin-top: -4px;
+	padding: 0;
+}
+
+.table__col--header {
+	height: 50px;
+}
+
+.col--account {
+	width: 34%;
+}
+
+.col--phone {
+	width: 10%;
+}
+
+.col--type {
+	width: 20%;
+}
+
+.col--property {
+	width: 7%;
+}
+
+.col--has-address{
+
+}
+
+.col--is-collegue {
+
+}
+
+.col--is-classmate {
+
+}
+
+.col--is-alien {
+
 }

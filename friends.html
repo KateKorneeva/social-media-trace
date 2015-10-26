@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Friends</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
+	</head>
+
+	<body>
+		<header class="menu">
+			<div class="menu__id"><span data-bind="text: alias"></span>, <span data-bind="text: age"></span></div>
+			<ul class="menu__ul">
+				<li class="menu__item">Пункт 1</li>
+				<li class="menu__item">Пункт 2</li>
+				<li class="menu__item">Пункт 3</li>
+				<li class="menu__item">Пункт 4</li>
+				<li class="menu__item">Пункт 5</li>
+				<li class="menu__item">Пункт 6</li>
+			</ul>
+		</header>
+
+		<div class="container">
+			<div class="avatar">
+				<img src="img/avatar.jpg">
+			</div>
+			<div class="main">
+				<div class="main__header">
+					<img class="main__icon" src="img/friend.png">
+					Друзья, родственники, коллеги, однокласники 
+					<ul class="filters">
+						<li class="filter-item">Все друзья <span class="normal-font"></span></li>
+						<li class="filter-item">С телефоном <span class="normal-font">36</span></li>
+						<li class="filter-item">Родственники <span class="normal-font">5</span></li>
+						<li class="filter-item">Родственники <span class="normal-font">4</span></li>
+					</ul>
+				</div> <!-- main__header -->
+				<div class="main__container">
+					<div class="search">
+						<input class="search__input" type="text" value="Введите имя, фамилию или номер телефона">
+						<input class="search__button" type="button" value="Найти">
+					</div>
+				</div> <!-- main__container -->
+				<div class="table">
+					<div class="table__header">
+						<div class="table__col table__col--header col--account">Аккаунт</div>
+						<div class="table__col table__col--header col--phone">Телефон</div>
+						<div class="table__col table__col--header col--type">Тип</div>
+						<div class="table__col table__col--header col--property"><img class="main__icon" src="img/people.png"></div>
+						<div class="table__col table__col--header col--property"><img class="main__icon" src="img/place.png"></div>
+						<div class="table__col table__col--header col--property"><img class="main__icon" src="img/job.png"></div>
+						<div class="table__col table__col--header col--property"><img class="main__icon" src="img/study.png"></div>
+						<div class="table__col table__col--header col--property"><img class="main__icon" src="img/rocket.png"></div>
+					</div>
+					<div class="table__row">
+						<div class="table__col col--account"></div>
+						<div class="table__col col--phone"></div>
+						<div class="table__col col--type"></div>
+						<div class="table__col col--property"></div>
+						<div class="table__col col--property"></div>
+						<div class="table__col col--property"></div>
+						<div class="table__col col--property"></div>
+						<div class="table__col col--property"></div>
+					</div>
+				</div>
+			</div> <!-- main -->
+		</div> <!-- container -->
+	
+		<script type="text/javascript" src="js/lib/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/less.min.js"></script>
+		<script type="text/javascript" src="js/app/app.js"></script>
+		<script type="text/javascript" src="js/app/script.js"></script>
+		<script type="text/javascript" src="js/app/data.js"></script>
+	</body>
+</html>

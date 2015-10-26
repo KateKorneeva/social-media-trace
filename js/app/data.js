@@ -1,5 +1,5 @@
 var data = {
-  "avatarURL": "/avatar/628bffae-69d7-4b7a-ad83-b5eb8fbee492",
+  "avatarURL": "img/avatar.jpg",
   "alias": "Фамилия Имя Отчество",
   "birthDate": 326419200,
   "pages": [
@@ -84,6 +84,160 @@ var data = {
       "name": "Лицей 2301",
       "city": "Москва",
       "country": "Россия"
+    }
+  ]
+};
+
+var friendsData = {
+  "avatarURL": "/avatar/628bffae-69d7-4b7a-ad83-b5eb8fbee492",
+  "alias": "Фамилия Имя Отчество",
+  "birthDate": 326419200,
+  "friends": [
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": ["+ 7 900 700-00-00"],
+      "tags": [
+        {
+          "kind": "geo",
+          "value": "Москва"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "geo",
+          "value": "Москва"
+        },
+        {
+          "kind": "referrer",
+          "value": "Рекоммендатель"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "geo",
+          "value": "Москва"
+        },
+        {
+          "kind": "school",
+          "value": "Одноклассник"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "geo",
+          "value": "Москва"
+        },
+        {
+          "kind": "school",
+          "value": "Одноклассник"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "geo",
+          "value": "Москва"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "relative",
+          "value": "Родственник"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "relative",
+          "value": "Родственник"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "odnoklassniki",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "relative",
+          "value": "Родственник"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "odnoklassniki",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "relative",
+          "value": "Родственник"
+        }
+      ]
+    },
+    {
+      "id": "5555555",
+      "network": "vkontakte",
+      "alias": "Фамилия Имя Отчество",
+      "birthDate": 326419200,
+      "contacts": [],
+      "tags": [
+        {
+          "kind": "intimate",
+          "value": "Партнер"
+        },
+        {
+          "kind": "geo",
+          "value": "Москва"
+        }
+      ]
     }
   ]
 };
