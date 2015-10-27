@@ -248,28 +248,45 @@ header.menu {
 
 .table {
 	margin-top: 10px;
+	font-size: 0.8em;
+	width: 100%;
+	border-collapse: collapse;
 }
 
-.table__col {
+th {
+	font-weight: normal;
+}
+
+.table__row--header {
+	height: 50px;
+	font-size: 1.3em;
+}
+
+.table__cell {
+	border: 1px solid #eee;
+	text-align: center;
+}
+
+/*.table__col {
 	border: 1px solid #ddd;
 	height: 30px;
 	line-height: 30px;
 	display: inline-block;
 	margin-right: -5px;
-	margin-top: -4px;
+	margin-top: -12px;
 	padding: 0;
 }
 
 .table__col--header {
 	height: 50px;
-}
+}*/
 
 .col--account {
-	width: 34%;
+	width: 30%;
 }
 
 .col--phone {
-	width: 10%;
+	width: 15%;
 }
 
 .col--type {
@@ -280,7 +297,7 @@ header.menu {
 	width: 7%;
 }
 
-.col--has-address{
+/*.col--has-address{
 
 }
 
@@ -294,4 +311,4 @@ header.menu {
 
 .col--is-alien {
 
-}
+}*/

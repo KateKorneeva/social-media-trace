@@ -106,6 +106,18 @@ var viewModel = function () {
 		return emails;
 	}, viewModel);
 
+	self.friends = ko.observableArray();
+	for (var i = 0; i < friendsData.friends.length; i++) {
+		self.friends.push(friendsData.friends[i]);
+	};
+
+	var countAge = function (birthDate) {
+		var date = parseInt(new Date(birthDate).getFullYear());
+		var now = parseInt(new Date().getFullYear());
+		var age = (now - date);
+		return age;
+	}
+
 };
 
 $(function () {
@@ -116,5 +128,6 @@ $(function () {
 					.universities(data.universities)
 					.schools(data.schools)
 					.pages(data.pages);
+	console.log(viewModelObject.friends()[0]);
 	ko.applyBindings(viewModelObject);
 });
