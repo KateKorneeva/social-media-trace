@@ -283,8 +283,16 @@ th.table__cell--header {
 	border: 1px solid #eee;
 }
 
+.table__cell--phone {
+	text-align: center;
+}
+
+.table__network-icon {
+	float: right;
+}
+
 .col--account {
-	width: 30%;
+	width: 25%;
 }
 
 .col--phone {
@@ -296,5 +304,31 @@ th.table__cell--header {
 }
 
 .col--property {
-	width: 7%;
+	width: 5%;
+}
+
+.table__tag {
+	border-radius: 7px;
+	padding: 2px 5px;
+	background-color: yellow;
+}
+
+.js-green {
+	background-color: green;
+}
+
+.js-red {
+	background-color: red;
+}
+
+.js-yellow {
+	background-color: yellow;
+}
+
+.js-blue {
+	background-color: blue;
+}
+
+.js-orange {
+	background-color: orange;
 }

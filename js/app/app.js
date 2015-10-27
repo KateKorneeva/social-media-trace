@@ -111,12 +111,84 @@ var viewModel = function () {
 		self.friends.push(friendsData.friends[i]);
 	};
 
-	var countAge = function (birthDate) {
-		var date = parseInt(new Date(birthDate).getFullYear());
-		var now = parseInt(new Date().getFullYear());
-		var age = (now - date);
-		return age;
+	// self.people = ko.observableArray();
+	self.showMode = ko.observable('friends');
+
+	self.relatives = ko.observableArray();
+	self.classmates = ko.observableArray();
+	self.withPhone = ko.observableArray();
+	// self.people = self.friends();
+
+	self.people = ko.computed(function () {
+			switch (self.showMode()) {
+			case 'relatives':
+				return self.relatives();
+			case 'classmates':
+				return self.classmates();
+			case 'withPhone':
+				return self.withPhone();
+			default:
+				return self.friends();
+			}
+		}, viewModel);
+
+
+	self.assignRelatives = function () {
+		self.showMode = "relatives";
+		console.log(self.showMode);
 	}
+
+	self.assignClassmates = function () {
+		self.showMode = "classmates";
+
+	}
+
+	self.assignWithPhone = function () {
+		self.showMode = "withPhone";
+
+	}
+
+	self.assignFriends = function () {
+		self.showMode = "friends";
+
+	}
+
+	for (var i = 0; i < self.friends().length; i++) {
+		for (var j = 0; j < self.friends()[i].tags.length; j++) {
+			if (self.friends()[i].tags[j].kind == "relative") {
+				self.relatives().push(self.friends()[i]);
+			};
+			if (self.friends()[i].tags[j].kind == "school") {
+				self.classmates().push(self.friends()[i]);
+			};
+		};
+
+		if (self.friends()[i].contacts.length > 0) {
+			self.withPhone().push(self.friends()[i]);
+		}
+	};
+
+	var getAge = function (arrayItem) {
+		var date = parseInt(new Date(arrayItem.birthDate).getFullYear());
+		var now = parseInt(new Date().getFullYear());
+		arrayItem.age = (now - date);
+	}
+
+	var getSocialIcon = function (arrayItem) {
+		if (arrayItem.network == "vkontakte") {
+			arrayItem.icon = "img/vk.png";
+		}
+		else if (arrayItem.network == "odnoklassniki") {
+			arrayItem.icon = "img/odnokl.png"
+		};
+	}
+
+	for (var i = 0; i < self.friends().length; i++) {
+		getAge(self.friends()[i]);
+
+		getSocialIcon(self.friends()[i]);
+	};
+
 
 };
 
