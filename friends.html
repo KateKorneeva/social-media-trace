@@ -35,12 +35,10 @@
 						<li class="filter-item">Родственники <span class="normal-font">4</span></li>
 					</ul>
 				</div> <!-- main__header -->
-				<div class="main__container">
 					<div class="search">
 						<input class="search__input" type="text" value="Введите имя, фамилию или номер телефона">
 						<input class="search__button" type="button" value="Найти">
 					</div>
-				</div> <!-- main__container -->
 				<table class="table">
 					<col class="col--account"></col>
 					<col class="col--phone"></col>
@@ -50,19 +48,19 @@
 					<col class="col--property"></col>
 					<col class="col--property"></col>
 					<col class="col--property"></col>
-					<thead class="table__row table__row--header ">
-						<th class="table__cell">Аккаунт</th>
-						<th class="table__cell">Телефон</th>
-						<th class="table__cell"></th>
-						<th class="table__cell"><img class="main__icon" src="img/people.png"></th>
-						<th class="table__cell"><img class="main__icon" src="img/place.png"></th>
-						<th class="table__cell"><img class="main__icon" src="img/job.png"></th>
-						<th class="table__cell"><img class="main__icon" src="img/study.png"></th>
-						<th class="table__cell"><img class="main__icon" src="img/rocket.png"></th>
+					<thead class="table__row table__row--header">
+						<th class="table__cell table__cell--header">Аккаунт</th>
+						<th class="table__cell table__cell--header"><img class="main__icon main__icon--phone-table" src="img/phone.png">Телефон</th>
+						<th class="table__cell table__cell--header"></th>
+						<th class="table__cell table__cell--header"><img class="main__icon" src="img/people.png"></th>
+						<th class="table__cell table__cell--header"><img class="main__icon" src="img/place.png"></th>
+						<th class="table__cell table__cell--header"><img class="main__icon" src="img/job.png"></th>
+						<th class="table__cell table__cell--header"><img class="main__icon" src="img/study.png"></th>
+						<th class="table__cell table__cell--header"><img class="main__icon" src="img/rocket.png"></th>
 					</thead>
 					<tbody data-bind="foreach: friends">
 						<tr class="table__row">
-							<td class="table__cell"><span data-bind="text: alias"></span>, <span data-bind="text: network"></span></td>
+							<td class="table__cell"><img class="main__icon main__icon--inf" src="img/inform.png"><span data-bind="text: alias"></span>, <span data-bind="text: network"></span></td>
 							<td class="table__cell" data-bind="text: contacts"></td>
 							<td class="table__cell"></td>
 							<td class="table__cell"></td>

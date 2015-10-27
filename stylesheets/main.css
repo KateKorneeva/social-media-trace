@@ -199,6 +199,18 @@ header.menu {
 	width: 20px;
 }
 
+.main__icon--inf {
+	width: 20px;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+.main__icon--phone-table {
+	width: 20px;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+
 .main__links {
 	display: inline-block;
 	vertical-align: top;
@@ -224,7 +236,7 @@ header.menu {
 }
 
 .search {
-	margin-top: 10px;
+	margin: 10px 20px;
 }
 
 .search__input {
@@ -248,38 +260,28 @@ header.menu {
 
 .table {
 	margin-top: 10px;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	width: 100%;
 	border-collapse: collapse;
 }
 
-th {
-	font-weight: normal;
+.table__row {
+	height: 30px;
+	line-height: 30px;
 }
 
-.table__row--header {
+thead.table__row--header {
+	font-size: 1.2em;
+}
+
+th.table__cell--header {
 	height: 50px;
-	font-size: 1.3em;
+	font-weight: normal;
 }
 
 .table__cell {
 	border: 1px solid #eee;
-	text-align: center;
 }
-
-/*.table__col {
-	border: 1px solid #ddd;
-	height: 30px;
-	line-height: 30px;
-	display: inline-block;
-	margin-right: -5px;
-	margin-top: -12px;
-	padding: 0;
-}
-
-.table__col--header {
-	height: 50px;
-}*/
 
 .col--account {
 	width: 30%;
@@ -296,19 +298,3 @@ th {
 .col--property {
 	width: 7%;
 }
-
-/*.col--has-address{
-
-}
-
-.col--is-collegue {
-
-}
-
-.col--is-classmate {
-
-}
-
-.col--is-alien {
-
-}*/
