@@ -332,3 +332,13 @@ th.table__cell--header {
 .js-orange {
 	background-color: orange;
 }
+
+.main__footer {
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 0.9em;
+	color: #637BAB;
+	text-decoration: underline;
+	cursor: pointer;
+}
