@@ -313,12 +313,23 @@ th.table__cell--header {
 	/*background-color: yellow;*/
 }
 
+.table__dot {
+	height: 15px;
+	width: 15px;
+	margin: 0 auto;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	background-color: yellow;
+}
+
 .jsGreen {
 	background-color: green;
+	color: #fff;
 }
 
 .jsRed {
 	background-color: red;
+	color: #fff;
 }
 
 .jsYellow {
@@ -327,10 +338,12 @@ th.table__cell--header {
 
 .jsBlue {
 	background-color: blue;
+	color: #fff;
 }
 
 .jsOrange {
 	background-color: orange;
+	color: #fff;
 }
 
 .main__footer {

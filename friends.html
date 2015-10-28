@@ -63,11 +63,11 @@
 							<td class="table__cell"><img class="main__icon main__icon--inf" src="img/inform.png"><span data-bind="text: alias"></span>, <span data-bind="text: age"></span><img class="main__icon table__network-icon" data-bind="attr: { 'src': icon }"></td>
 							<td class="table__cell table__cell--phone" data-bind="text: contacts"></td>
 							<td class="table__cell" data-bind="foreach: tags"><span class="table__tag" data-bind="text: value, css: cssClass"></span> </td>
-							<td class="table__cell"></td>
-							<td class="table__cell"></td>
-							<td class="table__cell"></td>
-							<td class="table__cell"></td>
-							<td class="table__cell"></td>
+							<td class="table__cell" data-bind="foreach: tags"><div class="table__dot" data-bind="visible: kind == 'relative', css: cssClass"></div></td>
+							<td class="table__cell" data-bind="foreach: tags"><div class="table__dot" data-bind="visible: kind == 'geo', css: cssClass"></td>
+							<td class="table__cell" data-bind="foreach: tags"><div class="table__dot" data-bind="visible: kind == 'referrer', css: cssClass"></td>
+							<td class="table__cell" data-bind="foreach: tags"><div class="table__dot" data-bind="visible: kind == 'school', css: cssClass"></td>
+							<td class="table__cell" data-bind="foreach: tags"><div class="table__dot" data-bind="visible: kind == 'intimate', css: cssClass"></td>
 						</tr>
 					</tbody>
 				</table>

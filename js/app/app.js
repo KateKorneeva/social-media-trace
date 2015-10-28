@@ -197,10 +197,10 @@ var viewModel = function () {
 					self.friends()[i].tags[j].cssClass = "jsGreen";
 					break;
 				case "intimate":
-					self.friends()[i].tags[j].cssClass = "jsBlue";
+					self.friends()[i].tags[j].cssClass = "jsOrange";
 					break;
 				case "geo":
-					self.friends()[i].tags[j].cssClass = "jsOrange";
+					self.friends()[i].tags[j].cssClass = "jsBlue";
 					break;
 				case "school":
 					self.friends()[i].tags[j].cssClass = "jsYellow";
