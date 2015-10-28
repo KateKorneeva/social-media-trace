@@ -310,26 +310,26 @@ th.table__cell--header {
 .table__tag {
 	border-radius: 7px;
 	padding: 2px 5px;
-	background-color: yellow;
+	/*background-color: yellow;*/
 }
 
-.js-green {
+.jsGreen {
 	background-color: green;
 }
 
-.js-red {
+.jsRed {
 	background-color: red;
 }
 
-.js-yellow {
+.jsYellow {
 	background-color: yellow;
 }
 
-.js-blue {
+.jsBlue {
 	background-color: blue;
 }
 
-.js-orange {
+.jsOrange {
 	background-color: orange;
 }
 

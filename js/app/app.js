@@ -189,6 +189,50 @@ var viewModel = function () {
 		getSocialIcon(self.friends()[i]);
 	};
 
+	for (var i = 0; i < self.friends().length; i++) {
+		for (var j = 0; j < self.friends()[i].tags.length; j++) {
+			self.friends()[i].tags[j].cssClass = ko.observable(self.friends()[i].tags[j].kind);
+			switch(self.friends()[i].tags[j].kind) {
+				case "relative":
+					self.friends()[i].tags[j].cssClass = "jsGreen";
+					break;
+				case "intimate":
+					self.friends()[i].tags[j].cssClass = "jsBlue";
+					break;
+				case "geo":
+					self.friends()[i].tags[j].cssClass = "jsOrange";
+					break;
+				case "school":
+					self.friends()[i].tags[j].cssClass = "jsYellow";
+					break;
+				case "referrer":
+					self.friends()[i].tags[j].cssClass = "jsRed";
+					break;
+				default:
+					self.friends()[i].tags[j].cssClass = "jsBlue";
+					break;
+			}
+		};
+	};
+
+	self.tagKindColor =  ko.computed (function() {
+		console.log(this.kind);
+		switch(this.kind) {
+			case undefined:
+				return "jsGreen";
+			case "intimate":
+				return "jsBlue";
+			case "geo":
+				return "jsRed";
+			case "school":
+				return "jsOrange";
+			case "referrer":
+				return "jsYellow";
+			default:
+				return "jsRed";
+		}
+	}, viewModel);
+
 
 };
 
